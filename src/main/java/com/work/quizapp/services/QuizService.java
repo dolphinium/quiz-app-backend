@@ -5,7 +5,9 @@ import com.work.quizapp.models.Quiz;
 
 import java.util.List;
 
+
 public interface QuizService {
     List<QuizDTO> getAllQuizzes();
-    QuizDTO createQuiz(QuizDTO QuizDTO);
+    QuizDTO createQuiz(QuizDTO quizDTO);
+    QuizDTO getQuizById(String id);
 }

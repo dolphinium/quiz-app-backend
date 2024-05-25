@@ -14,13 +14,18 @@ public class QuizController {
     @Autowired
     private QuizService quizService;
 
-    @GetMapping("/getAll")
+    @GetMapping
     public List<QuizDTO> getAllQuizzes() {
         return quizService.getAllQuizzes();
     }
 
-    @PostMapping("add")
-    public QuizDTO createQuiz(@RequestBody QuizDTO quiz) {
-        return quizService.createQuiz(quiz);
+    @PostMapping
+    public QuizDTO createQuiz(@RequestBody QuizDTO quizDTO) {
+        return quizService.createQuiz(quizDTO);
+    }
+
+    @GetMapping("/{id}")
+    public QuizDTO getQuizById(@PathVariable String id) {
+        return quizService.getQuizById(id);
     }
 }
